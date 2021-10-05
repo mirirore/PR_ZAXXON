@@ -5,9 +5,21 @@ using UnityEngine;
 public class MoverNave : MonoBehaviour
 {
     public float desplSpeed = 30f;
-   
+
+
     // Update is called once per frame
     void Update()
+    {
+
+        Movimiento();
+        
+
+      
+
+    }
+    //Rotate
+
+    void Movimiento()
     {
         float DesplY = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * DesplY * Time.deltaTime * desplSpeed, Space.World);
@@ -16,16 +28,17 @@ public class MoverNave : MonoBehaviour
         float DesplX = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * DesplX * Time.deltaTime * desplSpeed, Space.World);
 
-        
+
         float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
         transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);
 
 
         //RESTRICCION
 
+
         // Desplazamiento Horizontal
 
-          if (transform.position.x >= 10)
+        if (transform.position.x >= 10)
         {
             transform.position = new Vector3(10f, transform.position.y, transform.position.z);
         }
@@ -46,13 +59,6 @@ public class MoverNave : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, -1f, transform.position.z);
         }
-
-        //Rotate
-
-      
-
     }
-
-
 
 }
