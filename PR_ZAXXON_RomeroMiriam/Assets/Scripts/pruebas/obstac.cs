@@ -32,7 +32,7 @@ public class obstac : MonoBehaviour
             float aleatorioY = Random.Range(-5, 6);
             Vector3 newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
             Instantiate(meteor, newPos, Quaternion.identity);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
 
         }
 
