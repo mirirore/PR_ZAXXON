@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float desplSpeed = 30f;
+    InitGame initGame;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        initGame = GameObject.Find("InitGameScript").GetComponent<InitGame>();
+
+    }
 
 
     // Update is called once per frame
@@ -22,15 +29,15 @@ public class MoverNave : MonoBehaviour
     void Movimiento()
     {
         float DesplY = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * DesplY * Time.deltaTime * desplSpeed, Space.World);
+        transform.Translate(Vector3.up * DesplY * Time.deltaTime * initGame.speed, Space.World);
 
 
         float DesplX = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * DesplX * Time.deltaTime * desplSpeed, Space.World);
+        transform.Translate(Vector3.right * DesplX * Time.deltaTime * initGame.speed, Space.World);
 
 
-        float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
-        transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);
+       /* float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
+        transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);*/
 
 
         //RESTRICCION
