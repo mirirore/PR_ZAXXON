@@ -6,13 +6,14 @@ public class MoverNave : MonoBehaviour
 {
     InitGame initGame;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        initGame = GameObject.Find("InitGameScript").GetComponent<InitGame>();
+        initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
 
     }
-
 
     // Update is called once per frame
     void Update()
@@ -20,9 +21,6 @@ public class MoverNave : MonoBehaviour
 
         Movimiento();
         
-
-      
-
     }
     //Rotate
 
@@ -35,9 +33,9 @@ public class MoverNave : MonoBehaviour
         float DesplX = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * DesplX * Time.deltaTime * initGame.speed, Space.World);
 
-
-       /* float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
-        transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);*/
+        
+        /* float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
+         transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);*/
 
 
         //RESTRICCION
@@ -57,9 +55,9 @@ public class MoverNave : MonoBehaviour
 
         // Desplazamiento Vertical
 
-        if (transform.position.y >= 5)
+        if (transform.position.y >= 4)
         {
-            transform.position = new Vector3(transform.position.x, 5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 4f, transform.position.z);
         }
 
         if (transform.position.y <= -1)
@@ -68,4 +66,15 @@ public class MoverNave : MonoBehaviour
         }
     }
 
+    /*Destruir nave
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "obstaculo")
+            {
+            
+            Destroy(gameObject);
+            
+            }
+    }
+    */
 }

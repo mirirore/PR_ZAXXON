@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Obstaculo : MonoBehaviour
 {
-
+    
     InitGame initGame;
 
     // Start is called before the first frame update
     void Start()
     {
-        initGame = GameObject.Find("InitGameScript").GetComponent<InitGame>();
+        initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
 
     }
 
@@ -19,6 +19,7 @@ public class Obstaculo : MonoBehaviour
     {
         transform.Translate(Vector3.back * Time.deltaTime * initGame.speed);
 
+       
         //Destruir objeto si pasa de los limites de mi camara
         float posZ = transform.position.z;
 
