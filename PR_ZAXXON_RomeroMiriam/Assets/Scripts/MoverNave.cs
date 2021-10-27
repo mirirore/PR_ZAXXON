@@ -6,7 +6,7 @@ public class MoverNave : MonoBehaviour
 {
     InitGame initGame;
 
-    
+    //public float rotationSpeed = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class MoverNave : MonoBehaviour
         Movimiento();
         
     }
-    //Rotate
+    
 
     void Movimiento()
     {
@@ -33,9 +33,13 @@ public class MoverNave : MonoBehaviour
         float DesplX = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * DesplX * Time.deltaTime * initGame.speed, Space.World);
 
-        
-        /* float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
-         transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);*/
+        /*ROTAR PRUEBAS
+        float desplR = Input.GetAxis("Rotation");
+        transform.Rotate(0f, 0f, desplR * Time.deltaTime * -rotationSpeed);
+
+       float Rotar = Input.GetAxis("Horizontal") * desplSpeed;
+         transform.Rotate(Vector3.back * Rotar * Time.deltaTime * desplSpeed);
+        */
 
 
         //RESTRICCION
