@@ -80,4 +80,8 @@ public class InstObs : MonoBehaviour
     }
 
     
+    public void PararInstanciar()
+    {
+        StopCoroutine("RandomObs");
+    }
 }

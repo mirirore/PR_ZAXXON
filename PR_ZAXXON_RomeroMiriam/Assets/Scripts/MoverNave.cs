@@ -6,7 +6,7 @@ public class MoverNave : MonoBehaviour
 {
     InitGame initGame;
 
-    //public float rotationSpeed = 100f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class MoverNave : MonoBehaviour
         }
     }
 
-    /*Destruir nave
+    //Destruir nave
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "obstaculo")
@@ -80,5 +80,5 @@ public class MoverNave : MonoBehaviour
             
             }
     }
-    */
+    
 }

@@ -7,6 +7,10 @@ public class InitGame : MonoBehaviour
 {
     public int levelGame;
     public float speed = 40f;
+    public bool alive;
+
+    /*ENERGIA ESCUDO VARIABLES
+     
 
    
 
@@ -47,6 +51,8 @@ public class InitGame : MonoBehaviour
     }
     */
 
+    
+    
 
     IEnumerator SpeedLevel()
     {
@@ -65,7 +71,14 @@ public class InitGame : MonoBehaviour
         }
     }
 
-    
-   
-    
+    public void Morir()
+    {
+        alive = false;
+        speed = 0f;
+        InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
+        instObs.SendMessage("PararInstanciar");
+
+    }
+
+
 }
