@@ -18,6 +18,8 @@ public class InstObs : MonoBehaviour
 
     int level;
 
+
+
     
 
 
@@ -33,7 +35,7 @@ public class InstObs : MonoBehaviour
 
     }
 
-   
+
 
     IEnumerator RandomObs()
     {
@@ -79,9 +81,10 @@ public class InstObs : MonoBehaviour
        
     }
 
-    
-    public void PararInstanciar()
+   public void PararInstancia()
     {
+
         StopCoroutine("RandomObs");
     }
+   
 }

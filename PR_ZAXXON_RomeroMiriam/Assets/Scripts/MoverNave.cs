@@ -74,11 +74,11 @@ public class MoverNave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "obstaculo")
-            {
-            
-            Destroy(gameObject);
-            
-            }
+        {
+
+            initGame.SendMessage("Morir");
+           
+        }
     }
     
 }

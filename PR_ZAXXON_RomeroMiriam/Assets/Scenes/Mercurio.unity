@@ -591,6 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGame: 0
   speed: 40
+  alive: 0
 --- !u!1 &854526710
 GameObject:
   m_ObjectHideFlags: 0
