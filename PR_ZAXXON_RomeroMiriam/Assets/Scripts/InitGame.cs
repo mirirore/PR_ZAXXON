@@ -9,47 +9,39 @@ public class InitGame : MonoBehaviour
     public float speed = 40f;
     public bool alive;
 
-    /*ENERGIA ESCUDO VARIABLES
+    //UI Score
+    static float score;
+    
+    [SerializeField] Text ScoreText;
+
+
+    //ENERGIA ESCUDO VARIABLES
      
 
-   
-
-    /*PUNTUACION VARIABLES
-    static float score;
-    [SerializeField] float MaxSpeed;
-    public bool alive;
-    [SerializeField] Text scoreText;
-    */
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("SpeedLevel");
 
+
+        //SCORE
         
-        /*SCORE
-        score = 0;
-        MaxSpeed = 100f;
-        alive = true;
-        */
+        ScoreText.text = "PUNTOS " + (Mathf.Round(score));
+        
         
     }
 
 
-    /*UPDATE PARA VER TIEMPO QUE HA PASADO PARA LA SCORE
+    //UPDATE PARA VER TIEMPO QUE HA PASADO PARA LA SCORE
     private void Update()
     {
-        if (speed < MaxSpeed && alive == true)
-        {
-            speed += 0.001f;
-        }
-        float tiempo = Time.time;
-        print(Mathf.Round(tiempo));
 
-        score = Mathf.Round(tiempo) * speed;
-       scoreText.text = Mathf.Round(score) + "mts.";
+       float tiempo = Time.timeSinceLevelLoad;
+       score = Mathf.Round(tiempo) * speed;
+       ScoreText.text = "PUNTOS "+ Mathf.Round(score) ;
     }
-    */
+    
 
     
     IEnumerator SpeedLevel()
@@ -88,7 +80,6 @@ public class InitGame : MonoBehaviour
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         instObs.SendMessage("PararInstancia");
         GameObject.Find("Nave").SetActive(false);
-        
     }
 
     

@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 10af481fd44337d4896f5f381c8d77b5
+  - enabled: 1
+    path: Assets/Scenes/Mercurio.unity
+    guid: 784f8cf0d3bcd78489cd8ae8c69b6df7
+  - enabled: 1
+    path: Assets/Scenes/Configuracion.unity
+    guid: 37ba245b662ddc843beaf81ed2da2988
+  - enabled: 1
+    path: Assets/Scenes/HighScore.unity
+    guid: 641e3834f56b20244a3bd826a3ac6d1d
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar.unity
+    guid: a578c69d8fed7e54e98da72e8748ec2a
+  - enabled: 1
+    path: Assets/Scenes/HUD.unity
+    guid: 6e019aa4ebb480b4ba366fe4e4f5523a
   m_configObjects: {}
