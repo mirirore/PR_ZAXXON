@@ -543,6 +543,23 @@ MonoBehaviour:
   - {fileID: 3394314853506608697, guid: 26c23249051e702408f5a43ccef7e865, type: 3}
   - {fileID: 4846511882121165619, guid: 73eee2f8fdc7350418906587dde07439, type: 3}
   - {fileID: 5162701999614931576, guid: fcb4fc0e2374fff4ba908d3bad3cc657, type: 3}
+--- !u!1 &598642098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1628036187218629360, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+  m_PrefabInstance: {fileID: 782939888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &598642099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598642098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9738bb91bb9a3364ab9dd576e2d88353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &666091308
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,10 +620,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.48235294, g: 0.078431375, b: 0.078431375, a: 1}
+    m_SelectedColor: {r: 0.48235294, g: 0.078431375, b: 0.078431375, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -625,7 +642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 666091311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 598642099}
+        m_TargetAssemblyTypeName: CargarEscena, Assembly-CSharp
+        m_MethodName: Juego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &666091311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +832,7 @@ MonoBehaviour:
   levelGame: 0
   speed: 40
   alive: 0
+  BotonGeneral: {fileID: 666091310}
   ScoreText: {fileID: 242420599}
 --- !u!1001 &782939888
 PrefabInstance:
@@ -1080,10 +1110,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.48235294, g: 0.078431375, b: 0.078431375, a: 1}
+    m_SelectedColor: {r: 0.48235294, g: 0.078431375, b: 0.078431375, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1102,7 +1132,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921893527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 598642099}
+        m_TargetAssemblyTypeName: CargarEscena, Assembly-CSharp
+        m_MethodName: MenuInicio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &921893527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,7 +1295,7 @@ GameObject:
   - component: {fileID: 972027470}
   - component: {fileID: 972027469}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1511,7 +1553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1350870736
 RectTransform:
   m_ObjectHideFlags: 0

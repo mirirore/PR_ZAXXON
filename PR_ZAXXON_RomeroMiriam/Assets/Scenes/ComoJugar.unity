@@ -258,8 +258,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -282,7 +282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2092382365}
-        m_TargetAssemblyTypeName: ConfigScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: CargarEscena, Assembly-CSharp
         m_MethodName: MenuInicio
         m_Mode: 1
         m_Arguments:
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1254035301}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1924652290
@@ -632,7 +632,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c4a90561ec86ea748904b74c9ace412d, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -763,8 +763,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2092382360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
+  m_Script: {fileID: 11500000, guid: 9738bb91bb9a3364ab9dd576e2d88353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumenSL: {fileID: 0}
-  CambioMusicaSL: {fileID: 0}

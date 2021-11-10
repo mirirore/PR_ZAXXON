@@ -73,6 +73,7 @@ public class MoverNave : MonoBehaviour
     //Destruir nave
     private void OnTriggerEnter(Collider other)
     {
+        
         if(other.gameObject.tag == "obstaculo")
         {
 

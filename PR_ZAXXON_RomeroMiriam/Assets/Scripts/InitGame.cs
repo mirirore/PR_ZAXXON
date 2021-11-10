@@ -9,14 +9,18 @@ public class InitGame : MonoBehaviour
     public float speed = 40f;
     public bool alive;
 
+    //GAMEOVER
+    GameObject Derrota;
+    Canvas GameOver;
+    [SerializeField] Button BotonGeneral;
+
+
     //UI Score
     static float score;
     
     [SerializeField] Text ScoreText;
 
 
-    //ENERGIA ESCUDO VARIABLES
-     
 
 
     // Start is called before the first frame update
@@ -28,7 +32,11 @@ public class InitGame : MonoBehaviour
         //SCORE
         
         ScoreText.text = "PUNTOS " + (Mathf.Round(score));
-        
+
+        //Game Over
+        Derrota = GameObject.Find("GameOver");
+        GameOver = Derrota.GetComponent<Canvas>();
+        GameOver.enabled = false;
         
     }
 
@@ -79,7 +87,12 @@ public class InitGame : MonoBehaviour
         speed = 0f;
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         instObs.SendMessage("PararInstancia");
-        GameObject.Find("Nave").SetActive(false);
+        //GameObject.Find("Nave").SetActive(false);
+
+        //Game Over
+        GameOver.enabled = true;
+        BotonGeneral.Select();
+
     }
 
     
