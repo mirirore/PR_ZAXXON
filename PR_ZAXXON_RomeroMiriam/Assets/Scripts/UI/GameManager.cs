@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 
 {
 
-    public static float VolumenMusica = 5f;
-    public static int CambiarMusica;
-    public static int HighScore = 0;
+    public static float VolumenMusica = 3f;
+    public static float VolumenEfectos= 3f;
+    public static float HighScore = 0;
+    public static float SecondScore = 0;
+    public static float ThirdScore = 0;
 
 }

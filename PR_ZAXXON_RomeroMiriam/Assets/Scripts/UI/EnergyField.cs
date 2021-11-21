@@ -23,27 +23,31 @@ public class EnergyField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-           
-                if (loaded == false)
-                {
+
+        BarraEscudo(); 
+       
+       
+    }
+
+    void BarraEscudo()
+    {
+        if(initGame.alive==true)
+        {
+            if (loaded == false)
+            {
                 escudoEnergy.value += 5f * Time.deltaTime;
                 if (escudoEnergy.value >= 100f)
                 {
                     loaded = true;
                 }
-                }
+            }
 
-                if (Input.GetButton("Escudo") && loaded == true)
-                {
+            if (Input.GetButton("Escudo") && loaded == true)
+            {
                 escudoEnergy.value = 0;
                 loaded = false;
-                }
-        
-       
-            
-       
-        
-        
+            }
+        }
+
     }
 }

@@ -31,6 +31,10 @@ public class CargarEscena : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
-    
+    public void JuegoCompletado()
+    {
+        SceneManager.LoadScene(5);
+    }
+
    
 }

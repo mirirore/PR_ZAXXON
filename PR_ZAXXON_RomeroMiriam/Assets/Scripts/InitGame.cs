@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InitGame : MonoBehaviour
 {
     public int levelGame;
     public float speed = 40f;
     public bool alive;
+    
 
     //GAMEOVER
     GameObject Derrota;
@@ -16,9 +18,12 @@ public class InitGame : MonoBehaviour
 
 
     //UI Score
-    static float score;
-    
     [SerializeField] Text ScoreText;
+    static float score;
+
+    //UI nivel
+    [SerializeField] Text LevelText;
+    
 
 
 
@@ -28,11 +33,12 @@ public class InitGame : MonoBehaviour
     {
         StartCoroutine("SpeedLevel");
 
+        StartCoroutine("ContadorScore");
 
-        //SCORE
+
+        alive = true;
         
-        ScoreText.text = "PUNTOS " + (Mathf.Round(score));
-
+       
         //Game Over
         Derrota = GameObject.Find("GameOver");
         GameOver = Derrota.GetComponent<Canvas>();
@@ -41,17 +47,61 @@ public class InitGame : MonoBehaviour
     }
 
 
-    //UPDATE PARA VER TIEMPO QUE HA PASADO PARA LA SCORE
+ 
     private void Update()
     {
+        HudNivel(); 
 
-       float tiempo = Time.timeSinceLevelLoad;
-       score = Mathf.Round(tiempo) * speed;
-       ScoreText.text = "PUNTOS "+ Mathf.Round(score) ;
     }
     
+    IEnumerator ContadorScore()
+    {
+        //Score
+        while(true)
+        {
+            float tiempo = Time.time;
+            score = Mathf.Round(tiempo);
+            ScoreText.text = "PUNTOS " + Mathf.Round(score);
+            yield return new WaitForSeconds(0.1f);
+        }
+       
+    }
 
-    
+    public void HudNivel()
+    {
+ 
+        //Nivel
+        if (levelGame==0)
+        {
+            LevelText.text = "00 MERCURIO";
+        }
+        if (levelGame == 1)
+        {
+            LevelText.text = "01 VENUS";
+        }
+        if (levelGame == 2)
+        {
+            LevelText.text = "02 MARTE";
+        }
+        if (levelGame == 3)
+        {
+            LevelText.text = "03 JÚPITER";
+        }
+        if (levelGame == 4)
+        {
+            LevelText.text = "04 SATURNO";
+        }
+        if (levelGame == 5)
+        {
+            LevelText.text = "05 URANO";
+        }
+        if (levelGame == 6)
+        {
+            LevelText.text = "06 NEPTUNO";
+        }
+    }
+
+    //Aumento velocidad y cambio de nivel
     IEnumerator SpeedLevel()
     {
         while (true)
@@ -61,14 +111,16 @@ public class InitGame : MonoBehaviour
             speed = speed + 5;
             levelGame++;
 
+            //Fin del juego
             if (levelGame == 7)
             {
-                StopCoroutine("SpeedLevel");
+                SceneManager.LoadScene(5);
             }
 
         }
     }
 
+    //Score 
 
     /*public void Escudo()
     {
@@ -87,13 +139,32 @@ public class InitGame : MonoBehaviour
         speed = 0f;
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         instObs.SendMessage("PararInstancia");
-        //GameObject.Find("Nave").SetActive(false);
+        StopCoroutine("ContadorScore");
+
+        //Mandar Score a pantalla HIGHSCORE
+        if (score > GameManager.HighScore)
+        {
+            GameManager.ThirdScore = GameManager.SecondScore;
+            GameManager.SecondScore = GameManager.HighScore;
+            GameManager.HighScore = score;
+        }
+
+        else if (score < GameManager.HighScore && score > GameManager.SecondScore)
+        {
+            GameManager.ThirdScore = GameManager.SecondScore;
+            GameManager.SecondScore = score;
+        }
+
+        else if (score < GameManager.SecondScore && score > GameManager.ThirdScore)
+        {
+            GameManager.ThirdScore = score;
+        }
+        GameObject.Find("Nave").SetActive(false);
 
         //Game Over
         GameOver.enabled = true;
         BotonGeneral.Select();
-
     }
-
+   
     
 }

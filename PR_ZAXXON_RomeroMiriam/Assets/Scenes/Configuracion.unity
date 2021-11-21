@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 1005009290}
   - component: {fileID: 1005009289}
   m_Layer: 5
-  m_Name: CambioMusica_TX
+  m_Name: VolumenEfectos_TX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103.1, y: -51.9}
+  m_AnchoredPosition: {x: -118, y: -51.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005009289
@@ -737,7 +737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "M\xDASICA"
+  m_Text: Efectos
 --- !u!222 &1005009290
 CanvasRenderer:
   m_ObjectHideFlags: 0

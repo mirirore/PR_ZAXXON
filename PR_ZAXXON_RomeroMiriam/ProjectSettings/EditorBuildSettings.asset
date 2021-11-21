@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ComoJugar.unity
     guid: a578c69d8fed7e54e98da72e8748ec2a
   - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: ca88a6f0c307eac418c66840ae81faf3
+  - enabled: 0
     path: Assets/Scenes/HUD.unity
     guid: 6e019aa4ebb480b4ba366fe4e4f5523a
   m_configObjects: {}
