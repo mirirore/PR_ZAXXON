@@ -16,14 +16,19 @@ public class InitGame : MonoBehaviour
     Canvas GameOver;
     [SerializeField] Button BotonGeneral;
 
-
+    /*------UI------*/
     //UI Score
     [SerializeField] Text ScoreText;
     static float score;
 
     //UI nivel
     [SerializeField] Text LevelText;
-    
+
+    //UI Vidas
+    [SerializeField] Image vidas;
+    [SerializeField] Sprite[] livesArray;
+    int lives;
+    int spritePos = 0;
 
 
 
@@ -35,7 +40,11 @@ public class InitGame : MonoBehaviour
 
         StartCoroutine("ContadorScore");
 
+        //Vidas
+        lives = livesArray.Length;
+        vidas.sprite = livesArray[spritePos];
 
+        //Estado incial
         alive = true;
         
        
@@ -120,7 +129,7 @@ public class InitGame : MonoBehaviour
         }
     }
 
-    //Score 
+    
 
     /*public void Escudo()
     {
@@ -133,7 +142,23 @@ public class InitGame : MonoBehaviour
     }
     */
 
-   public void Morir()
+    //Chocarse
+    public void Chocar()
+    {
+        lives--;
+        spritePos++;
+        vidas.sprite = livesArray[spritePos];
+        GameOver.enabled = false;
+
+        if (lives == 0)
+        {
+            Morir();
+        }
+    }
+        
+
+
+        public void Morir()
     {
         alive = false;
         speed = 0f;

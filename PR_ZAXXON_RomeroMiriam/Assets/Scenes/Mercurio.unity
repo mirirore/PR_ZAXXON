@@ -676,6 +676,17 @@ MonoBehaviour:
   - {fileID: 3394314853506608697, guid: 26c23249051e702408f5a43ccef7e865, type: 3}
   - {fileID: 4846511882121165619, guid: 73eee2f8fdc7350418906587dde07439, type: 3}
   - {fileID: 5162701999614931576, guid: fcb4fc0e2374fff4ba908d3bad3cc657, type: 3}
+--- !u!114 &514589424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1628036186632757010, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+  m_PrefabInstance: {fileID: 782939888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &551736068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1058,11 @@ MonoBehaviour:
   BotonGeneral: {fileID: 666091310}
   ScoreText: {fileID: 242420599}
   LevelText: {fileID: 1608245608}
+  vidas: {fileID: 514589424}
+  livesArray:
+  - {fileID: 9200775849295203296, guid: f854a71d175a91949854a48f15f373dc, type: 3}
+  - {fileID: -4997167023504409373, guid: f854a71d175a91949854a48f15f373dc, type: 3}
+  - {fileID: -3837318412928117542, guid: f854a71d175a91949854a48f15f373dc, type: 3}
 --- !u!1001 &782939888
 PrefabInstance:
   m_ObjectHideFlags: 0

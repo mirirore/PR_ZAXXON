@@ -24,15 +24,14 @@ public class EnergyField : MonoBehaviour
     void Update()
     {
 
-        BarraEscudo(); 
+        BarraEscudo();
        
        
     }
 
     void BarraEscudo()
     {
-        if(initGame.alive==true)
-        {
+       
             if (loaded == false)
             {
                 escudoEnergy.value += 5f * Time.deltaTime;
@@ -47,7 +46,7 @@ public class EnergyField : MonoBehaviour
                 escudoEnergy.value = 0;
                 loaded = false;
             }
-        }
+        
 
     }
 }

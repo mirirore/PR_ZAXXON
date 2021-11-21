@@ -85,7 +85,7 @@ public class MoverNave : MonoBehaviour
         if(other.gameObject.tag == "obstaculo")
         {
 
-            initGame.SendMessage("Morir");
+            initGame.SendMessage("Chocar");
            
         }
     }
