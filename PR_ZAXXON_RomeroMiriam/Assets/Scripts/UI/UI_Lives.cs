@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UI_Lives : MonoBehaviour
 {
+    /*
     [SerializeField] Image vidas;
     [SerializeField] Sprite[] spriteVidasArray;
     [SerializeField] int lives;
@@ -40,5 +41,5 @@ public class UI_Lives : MonoBehaviour
         
 
     }
-
+    */
 }

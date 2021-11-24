@@ -9,6 +9,9 @@ public class InitGame : MonoBehaviour
     public int levelGame;
     public float speed = 40f;
     public bool alive;
+
+    //Llamar escudo
+    EnergyField energyField;
     
 
     //GAMEOVER
@@ -41,7 +44,7 @@ public class InitGame : MonoBehaviour
         StartCoroutine("ContadorScore");
 
         //Vidas
-        lives = livesArray.Length;
+        lives = 3;
         vidas.sprite = livesArray[spritePos];
 
         //Estado incial
@@ -52,7 +55,10 @@ public class InitGame : MonoBehaviour
         Derrota = GameObject.Find("GameOver");
         GameOver = Derrota.GetComponent<Canvas>();
         GameOver.enabled = false;
+
+        energyField = GameObject.Find("SlEnergy").GetComponent<EnergyField>();
         
+
     }
 
 
@@ -131,31 +137,25 @@ public class InitGame : MonoBehaviour
 
     
 
-    /*public void Escudo()
-    {
-        Invoke("PararEscudo", 5f);
-    }
-
-        void PararEscudo()
-    {
-
-    }
-    */
-
-    //Chocarse
+    
     public void Chocar()
     {
-        lives--;
-        spritePos++;
-        vidas.sprite = livesArray[spritePos];
-        GameOver.enabled = false;
-
-        if (lives == 0)
+        if(energyField.shield==false)
         {
-            Morir();
+            lives--;
+            spritePos++;
+            GameOver.enabled = false;
+
+            if (lives == 0)
+            {
+                Morir();
+
+            }
+            vidas.sprite = livesArray[spritePos];
         }
-    }
         
+    }
+       
 
 
         public void Morir()
@@ -165,6 +165,7 @@ public class InitGame : MonoBehaviour
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         instObs.SendMessage("PararInstancia");
         StopCoroutine("ContadorScore");
+        StopCoroutine("SpeedLevel");
 
         //Mandar Score a pantalla HIGHSCORE
         if (score > GameManager.HighScore)

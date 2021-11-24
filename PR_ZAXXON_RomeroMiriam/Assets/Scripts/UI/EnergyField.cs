@@ -11,6 +11,8 @@ public class EnergyField : MonoBehaviour
 
     bool loaded;
 
+    public bool shield;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class EnergyField : MonoBehaviour
         initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
         escudoEnergy.value = 0f;
         loaded = false;
+        shield = false;
     }
 
     // Update is called once per frame
@@ -27,11 +30,13 @@ public class EnergyField : MonoBehaviour
         BarraEscudo();
        
        
+       
     }
 
-    void BarraEscudo()
+    public void BarraEscudo()
     {
-       
+        if (initGame.alive==true)
+        {
             if (loaded == false)
             {
                 escudoEnergy.value += 5f * Time.deltaTime;
@@ -41,12 +46,32 @@ public class EnergyField : MonoBehaviour
                 }
             }
 
-            if (Input.GetButton("Escudo") && loaded == true)
+            if (Input.GetButtonDown("Escudo") && loaded == true)
             {
                 escudoEnergy.value = 0;
                 loaded = false;
+                shield = true;
+                Escudo();
             }
+
+           
+
+
+        }
+       
+            
         
 
+    }
+
+    public void Escudo()
+    {
+        Invoke("PararEscudo", 5f);
+    }
+
+    void PararEscudo()
+    {
+        shield = false;
+       
     }
 }

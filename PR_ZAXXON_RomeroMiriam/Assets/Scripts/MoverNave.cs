@@ -7,7 +7,7 @@ public class MoverNave : MonoBehaviour
     InitGame initGame;
 
     //Rotacion angle
-    float RotAng = 30f;
+   float RotAng = 30f;
 
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class MoverNave : MonoBehaviour
     {
 
         Movimiento();
-        Rotacion();
+       Rotacion();
         
     }
     
@@ -65,18 +65,18 @@ public class MoverNave : MonoBehaviour
         }
     }
 
-    void Rotacion()
+   void Rotacion()
     {
         // Posicion y Quaternion
 
         float rotZ = Input.GetAxis("Horizontal") * RotAng;
-        float rotX = Input.GetAxis("Vertical") * RotAng;
+        
 
-        Quaternion target = Quaternion.Euler(rotX, 0, rotZ);
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime);
+        Quaternion rotar = Quaternion.Euler(0, 0, rotZ);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotar, Time.deltaTime);
 
     }
-
+   
 
     //Destruir nave
     private void OnTriggerEnter(Collider other)
