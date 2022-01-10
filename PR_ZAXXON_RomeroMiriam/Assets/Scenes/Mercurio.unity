@@ -1060,9 +1060,10 @@ MonoBehaviour:
   LevelText: {fileID: 1608245608}
   vidas: {fileID: 514589424}
   livesArray:
-  - {fileID: 9200775849295203296, guid: f854a71d175a91949854a48f15f373dc, type: 3}
-  - {fileID: -4997167023504409373, guid: f854a71d175a91949854a48f15f373dc, type: 3}
-  - {fileID: -3837318412928117542, guid: f854a71d175a91949854a48f15f373dc, type: 3}
+  - {fileID: 6382882798128785524, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
+  - {fileID: -1573313608294647807, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
+  - {fileID: -7082300663270226539, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
+  - {fileID: 1110412289462162878, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
 --- !u!1001 &782939888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1077,6 +1078,18 @@ PrefabInstance:
     - target: {fileID: 1628036185981552435, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628036186632757010, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6382882798128785524, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
+    - target: {fileID: 1628036186632757013, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1215.2476
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628036186632757013, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 76.81384
       objectReference: {fileID: 0}
     - target: {fileID: 1628036186694152463, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
       propertyPath: m_Text

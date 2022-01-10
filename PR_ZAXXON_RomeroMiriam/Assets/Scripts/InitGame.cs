@@ -74,13 +74,16 @@ public class InitGame : MonoBehaviour
         //Score
         while(true)
         {
-            float tiempo = Time.time;
+            float tiempo = Time.timeSinceLevelLoad;
             score = Mathf.Round(tiempo);
             ScoreText.text = "PUNTOS " + Mathf.Round(score);
             yield return new WaitForSeconds(0.1f);
         }
+
        
     }
+
+    
 
     public void HudNivel()
     {
@@ -144,6 +147,7 @@ public class InitGame : MonoBehaviour
         {
             lives--;
             spritePos++;
+            vidas.sprite = livesArray[spritePos];
             GameOver.enabled = false;
 
             if (lives == 0)
@@ -151,7 +155,7 @@ public class InitGame : MonoBehaviour
                 Morir();
 
             }
-            vidas.sprite = livesArray[spritePos];
+            
         }
         
     }
