@@ -9,7 +9,7 @@ public class EnergyField : MonoBehaviour
 
     [SerializeField] Slider escudoEnergy;
 
-    bool loaded;
+    public bool loaded;
 
     public bool shield;
 
@@ -33,6 +33,7 @@ public class EnergyField : MonoBehaviour
        
     }
 
+
     public void BarraEscudo()
     {
         if (initGame.alive==true)
@@ -48,10 +49,12 @@ public class EnergyField : MonoBehaviour
 
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
+                
                 escudoEnergy.value = 0;
                 loaded = false;
                 shield = true;
                 Escudo();
+                
             }
 
            

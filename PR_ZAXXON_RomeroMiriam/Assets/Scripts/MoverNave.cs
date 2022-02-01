@@ -7,7 +7,9 @@ public class MoverNave : MonoBehaviour
     InitGame initGame;
 
     //Rotacion angle
-   float RotAng = 30f;
+   float RotAng = 40f;
+
+    
 
 
     // Start is called before the first frame update

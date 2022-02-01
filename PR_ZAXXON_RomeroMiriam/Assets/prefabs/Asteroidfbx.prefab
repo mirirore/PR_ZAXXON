@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5709172815101333818}
   - component: {fileID: 7557032635709416944}
   - component: {fileID: 1603217790398424455}
+  - component: {fileID: 1351856011522932802}
   m_Layer: 0
   m_Name: Asteroidfbx
-  m_TagString: Untagged
+  m_TagString: obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a470420552009c743a69241f56ced2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1351856011522932802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349398095084241957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.47, z: 0.77407753}
+  m_Center: {x: 0.038734287, y: 0.022742577, z: 0.07675703}

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class InitGame : MonoBehaviour
 {
     public int levelGame;
-    public float speed = 40f;
+    public float speed = 35f;
     public bool alive;
 
     //Llamar escudo
@@ -22,7 +22,7 @@ public class InitGame : MonoBehaviour
     /*------UI------*/
     //UI Score
     [SerializeField] Text ScoreText;
-    static float score;
+    public float score;
 
     //UI nivel
     [SerializeField] Text LevelText;
@@ -74,7 +74,7 @@ public class InitGame : MonoBehaviour
         //Score
         while(true)
         {
-            float tiempo = Time.timeSinceLevelLoad;
+            float tiempo = (Time.timeSinceLevelLoad*speed);
             score = Mathf.Round(tiempo);
             ScoreText.text = "PUNTOS " + Mathf.Round(score);
             yield return new WaitForSeconds(0.1f);
