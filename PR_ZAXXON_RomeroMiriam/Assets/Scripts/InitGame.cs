@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class InitGame : MonoBehaviour
 {
     public int levelGame;
-    public float speed = 35f;
+    public float speed = 30f;
     public bool alive;
 
    

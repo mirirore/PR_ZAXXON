@@ -243,7 +243,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67649238}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2117ccac95d1efd469ba8086cc9eb433, type: 3}
   m_Name: 
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelGame: 0
-  speed: 35
+  speed: 30
   alive: 0
   BotonGeneral: {fileID: 666091310}
   ScoreText: {fileID: 242420599}

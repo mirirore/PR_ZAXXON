@@ -75,7 +75,7 @@ public class InstObs : MonoBehaviour
 
             if (arrayObst[randomNum].CompareTag("PowerUp"))
             {
-                if (contadorPowerUp == 5)
+                if (contadorPowerUp == 10)
                 {
                     newPos = new Vector3(aleatorioX, aleatorioY, transform.position.z);
                     Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);

@@ -21,10 +21,10 @@ public class PowerUp : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            
 
-            
+            energyField.PowerUpBoost = true;
             Destroy(gameObject);
+            
             
         }
         

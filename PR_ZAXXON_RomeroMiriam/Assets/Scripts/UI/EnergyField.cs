@@ -13,6 +13,10 @@ public class EnergyField : MonoBehaviour
 
     public bool shield;
 
+    public bool PowerUpBoost;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,7 @@ public class EnergyField : MonoBehaviour
         escudoEnergy.value = 0f;
         loaded = false;
         shield = false;
+        PowerUpBoost = false;
     }
 
     // Update is called once per frame
@@ -38,16 +43,27 @@ public class EnergyField : MonoBehaviour
     {
         if (initGame.alive==true)
         {
-            if (loaded == false)
+            
+
+            if (loaded == false && PowerUpBoost == false)
             {
                 escudoEnergy.value += 5f * Time.deltaTime;
+                
                 if (escudoEnergy.value >= 100f)
                 {
                     loaded = true;
                 }
+    
             }
 
+            else if (loaded == false && PowerUpBoost == true)
+            {
+                escudoEnergy.value += 20f; 
+                PowerUpBoost = false;
+                
+            }
 
+            
 
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
