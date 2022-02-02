@@ -6,22 +6,29 @@ using UnityEngine.UI;
 public class PowerUp : MonoBehaviour
 {
     InitGame initGame;
-    InstObs instObs;
+    EnergyField energyField;
     
+    
+
     // Start is called before the first frame update
     void Start()
     {
         initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
+        energyField = GameObject.Find("SlEnergy").GetComponent<EnergyField>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            initGame.score += 5000;
-            Destroy(gameObject);
+            
 
+            
+            Destroy(gameObject);
+            
         }
+        
+        
     }
 
    

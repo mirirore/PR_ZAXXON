@@ -15,6 +15,9 @@ public class InstObs : MonoBehaviour
     //Array obstaculos
     [SerializeField] GameObject[] arrayObst;
 
+    //Array Background
+    [SerializeField] GameObject[] arrayBG;
+
     //Variable cambio de nivel
     int level;
 
@@ -46,8 +49,9 @@ public class InstObs : MonoBehaviour
             float aleatorioX = Random.Range(-9, 10);
             float aleatorioY = Random.Range(-1, 6);
             Vector3 newPos = new Vector3(aleatorioX, aleatorioY, InitPos.position.z);
-
+            
             int randomNum;
+            int randomBG;
             
             level = initGame.levelGame;
             
@@ -55,14 +59,18 @@ public class InstObs : MonoBehaviour
             if (level == 0)
             {
                 randomNum = Random.Range(0,2);
+                randomBG = 0;
+                
             }
             else if (level > 0 && level < 5)
             {
                 randomNum = Random.Range(0, 3);
+                randomBG = Random.Range(0, 2);
             }
             else
             {
                 randomNum = Random.Range(0, arrayObst.Length);
+                randomBG = Random.Range(0, 3);
             }
 
             if (arrayObst[randomNum].CompareTag("PowerUp"))
@@ -90,27 +98,10 @@ public class InstObs : MonoBehaviour
                 // Instancia prefab aleatorio 
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
 
-
+                Instantiate(arrayBG[randomBG], transform.position, Quaternion.identity);
             }
-
-            /* Instancia POWER UPS POSICION
-            float instPowerUpX = Random.Range(-9f, 10f);
-            float instPowerUpY = Random.Range(-1f, 6f);
-
-
-            Vector3 PowerUpPos = new Vector3(instPowerUpX, instPowerUpY, InitPos.position.z);
 
             
-los powerUps se instancian en una posicion diferente a la de los obstaculos
-           if (PowerUpPos != newPos)
-            {
-                
-                Instantiate(powerUp, PowerUpPos, Quaternion.identity);
-                
-            }
-            */
-
-
             yield return new WaitForSeconds(intervalo);
 
         }

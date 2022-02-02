@@ -47,6 +47,8 @@ public class EnergyField : MonoBehaviour
                 }
             }
 
+
+
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
                 

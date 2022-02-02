@@ -10,8 +10,11 @@ public class InitGame : MonoBehaviour
     public float speed = 35f;
     public bool alive;
 
+   
     //Llamar escudo
     EnergyField energyField;
+
+    
     
 
     //GAMEOVER
@@ -74,10 +77,13 @@ public class InitGame : MonoBehaviour
         //Score
         while(true)
         {
+           
             float tiempo = (Time.timeSinceLevelLoad*speed);
             score = Mathf.Round(tiempo);
             ScoreText.text = "PUNTOS " + Mathf.Round(score);
-            yield return new WaitForSeconds(0.1f);
+           yield return new WaitForSeconds(0.1f);
+
+           
         }
 
        
@@ -167,7 +173,9 @@ public class InitGame : MonoBehaviour
         alive = false;
         speed = 0f;
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
+        
         instObs.SendMessage("PararInstancia");
+
         StopCoroutine("ContadorScore");
         StopCoroutine("SpeedLevel");
 
