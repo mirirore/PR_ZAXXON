@@ -14,7 +14,7 @@ public class InitGame : MonoBehaviour
     //Llamar escudo y restaScore
     EnergyField energyField;
     public bool restaScore;
-    
+    float castigo = 0;
     
     
 
@@ -83,16 +83,15 @@ public class InitGame : MonoBehaviour
         //Score
         while(true)
         {
-            float tiempo = (Time.timeSinceLevelLoad * speed);
+            float tiempo = ((Time.timeSinceLevelLoad * speed) - castigo);
             score = Mathf.Round(tiempo);
             ScoreText.text = "PUNTOS " + Mathf.Round(score);
             
            if (restaScore == true)
             {
             
-                tiempo = ((Time.timeSinceLevelLoad * speed) - 200f);
-                score = Mathf.Round(tiempo);
-                ScoreText.text = "PUNTOS " + Mathf.Round(score);
+                castigo = castigo + 200f;
+                restaScore = false;
             }
 
 
