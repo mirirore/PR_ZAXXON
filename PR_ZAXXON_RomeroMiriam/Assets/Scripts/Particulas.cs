@@ -12,6 +12,9 @@ public class Particulas : MonoBehaviour
     //Array Background
     [SerializeField] GameObject[] arrayBG;
 
+    //Posicion instanciador
+    [SerializeField] Transform backgPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +38,15 @@ public class Particulas : MonoBehaviour
 
             //Segun el nivel
             
-            if (level == 0 && level < 4)
+            if (level == 0)
             {
 
                 randombg = 0;
+            }
+            else if (level > 0 && level < 4)
+            {
+                randombg = Random.Range(0, 2);
+
             }
             else
             {
@@ -46,8 +54,8 @@ public class Particulas : MonoBehaviour
                 randombg = Random.Range(0,arrayBG.Length);
             }
 
-
-            Instantiate(arrayBG[randombg], transform.position, Quaternion.identity);
+            Vector3 newPosBG = new Vector3(backgPos.position.x, backgPos.position.y, backgPos.position.z);
+            Instantiate(arrayBG[randombg], newPosBG, Quaternion.identity);
 
             yield return new WaitForSeconds(0.1f);
 

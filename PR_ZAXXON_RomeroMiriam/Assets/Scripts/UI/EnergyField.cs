@@ -26,7 +26,8 @@ public class EnergyField : MonoBehaviour
         loaded = false;
         shield = false;
         PowerUpBoost = false;
-    }
+        
+}
 
     // Update is called once per frame
     void Update()
@@ -67,7 +68,7 @@ public class EnergyField : MonoBehaviour
 
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
-                
+                initGame.restaScore = true;
                 escudoEnergy.value = 0;
                 loaded = false;
                 shield = true;

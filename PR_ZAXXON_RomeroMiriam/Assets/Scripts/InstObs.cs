@@ -15,8 +15,7 @@ public class InstObs : MonoBehaviour
     //Array obstaculos
     [SerializeField] GameObject[] arrayObst;
 
-    //Array Background
-    [SerializeField] GameObject[] arrayBG;
+    
 
     //Variable cambio de nivel
     int level;
@@ -51,7 +50,7 @@ public class InstObs : MonoBehaviour
             Vector3 newPos = new Vector3(aleatorioX, aleatorioY, InitPos.position.z);
             
             int randomNum;
-            int randomBG;
+            
             
             level = initGame.levelGame;
             
@@ -59,18 +58,18 @@ public class InstObs : MonoBehaviour
             if (level == 0)
             {
                 randomNum = Random.Range(0,2);
-                randomBG = 0;
+                
                 
             }
             else if (level > 0 && level < 5)
             {
                 randomNum = Random.Range(0, 3);
-                randomBG = Random.Range(0, 2);
+                
             }
             else
             {
                 randomNum = Random.Range(0, arrayObst.Length);
-                randomBG = Random.Range(0, 3);
+                
             }
 
             if (arrayObst[randomNum].CompareTag("PowerUp"))
@@ -98,7 +97,7 @@ public class InstObs : MonoBehaviour
                 // Instancia prefab aleatorio 
                 Instantiate(arrayObst[randomNum], newPos, Quaternion.identity);
 
-                Instantiate(arrayBG[randomBG], transform.position, Quaternion.identity);
+                
             }
 
             

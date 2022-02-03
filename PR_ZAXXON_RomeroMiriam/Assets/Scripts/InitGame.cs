@@ -11,9 +11,10 @@ public class InitGame : MonoBehaviour
     public bool alive;
 
    
-    //Llamar escudo
+    //Llamar escudo y restaScore
     EnergyField energyField;
-
+    public bool restaScore;
+    
     
     
 
@@ -52,6 +53,9 @@ public class InitGame : MonoBehaviour
 
         //Estado incial
         alive = true;
+
+        //RestaScore
+        restaScore = false;
         
        
         //Game Over
@@ -68,7 +72,9 @@ public class InitGame : MonoBehaviour
  
     private void Update()
     {
-        HudNivel(); 
+        HudNivel();
+
+        
 
     }
     
@@ -77,18 +83,29 @@ public class InitGame : MonoBehaviour
         //Score
         while(true)
         {
-           
-            float tiempo = (Time.timeSinceLevelLoad*speed);
+            float tiempo = (Time.timeSinceLevelLoad * speed);
             score = Mathf.Round(tiempo);
             ScoreText.text = "PUNTOS " + Mathf.Round(score);
+            
+           if (restaScore == true)
+            {
+            
+                tiempo = ((Time.timeSinceLevelLoad * speed) - 200f);
+                score = Mathf.Round(tiempo);
+                ScoreText.text = "PUNTOS " + Mathf.Round(score);
+            }
+
+
            yield return new WaitForSeconds(0.1f);
 
            
         }
 
+
        
     }
 
+    
     
 
     public void HudNivel()
