@@ -286,8 +286,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1437460761}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 3
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -589,6 +589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumenSL: {fileID: 90693602}
   volumenText: {fileID: 0}
+  efectosSl: {fileID: 2069732546}
+  efectosText: {fileID: 0}
 --- !u!1 &665783794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,8 +1542,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 665783795}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_MaxValue: 3
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:

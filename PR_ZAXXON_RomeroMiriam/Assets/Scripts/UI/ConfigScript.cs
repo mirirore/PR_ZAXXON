@@ -8,14 +8,18 @@ public class ConfigScript : MonoBehaviour
 {
 
     [SerializeField] Slider volumenSL;
-    [SerializeField] Text volumenText;
+    //[SerializeField] Text volumenText;
     float volumen;
-    
+
+    [SerializeField] Slider efectosSL;
+    //[SerializeField] Text efectosText;
+     float volumenfx;
+
     // Start is called before the first frame update
     void Start()
     {
         volumenSL.value = GameManager.VolumenMusica;
-        
+        efectosSL.value = GameManager.VolumenEfectos;
     }
 
     // Update is called once per frame
@@ -28,7 +32,8 @@ public class ConfigScript : MonoBehaviour
     public void CambiarVolumen()
     {
         volumen = volumenSL.value;
-        volumenText.text = "Volumen" + volumen;
+        volumenfx = efectosSL.value;
+        //volumenText.text = "Volumen" + volumen;
     }
     public void MenuInicio()
     {
