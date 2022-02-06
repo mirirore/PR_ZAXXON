@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2117ccac95d1efd469ba8086cc9eb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparksParticle: {fileID: 5023129720149755024, guid: da800160aa567ee4f9910a1596aad183, type: 3}
 --- !u!64 &67649241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -862,6 +863,8 @@ MonoBehaviour:
   - {fileID: -1573313608294647807, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
   - {fileID: -7082300663270226539, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
   - {fileID: 1110412289462162878, guid: 79969efe8437a214dbd338c057bb858d, type: 3}
+  explosParticle: {fileID: 3707858157360033742, guid: f51104873ae650544bf49c8e72260c81, type: 3}
+  navePos: {fileID: 67649239}
 --- !u!1001 &782939888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,6 +924,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1628036186779280435, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+      propertyPath: PartPos
+      value: 
+      objectReference: {fileID: 67649239}
+    - target: {fileID: 1628036186779280435, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
+      propertyPath: shieldParticle
+      value: 
+      objectReference: {fileID: 5572004704153363494, guid: 3c6d544906389874b996988ce25a4889, type: 3}
     - target: {fileID: 1628036186866166654, guid: 7ea6b93f1c4406c4d9a6e8fc9ac6b89a, type: 3}
       propertyPath: m_RootOrder
       value: 5

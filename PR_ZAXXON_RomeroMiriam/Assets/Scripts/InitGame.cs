@@ -17,7 +17,6 @@ public class InitGame : MonoBehaviour
     float castigo = 0;
     
     
-
     //GAMEOVER
     GameObject Derrota;
     Canvas GameOver;
@@ -37,7 +36,9 @@ public class InitGame : MonoBehaviour
     int lives;
     int spritePos = 0;
 
-
+    /*------Particulas explosion-----*/
+    public GameObject explosParticle;
+    [SerializeField] Transform navePos;
 
 
     // Start is called before the first frame update
@@ -167,6 +168,8 @@ public class InitGame : MonoBehaviour
     {
         if(energyField.shield==false)
         {
+            
+            //Quita vidas y desactivar pantalla game over
             lives--;
             spritePos++;
             vidas.sprite = livesArray[spritePos];
@@ -189,9 +192,16 @@ public class InitGame : MonoBehaviour
         alive = false;
         speed = 0f;
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
-        
-        instObs.SendMessage("PararInstancia");
+        Invoke("MostrarGameOver", 3f);
+        GameObject.Find("Nave").SetActive(false);
 
+        //Instancia explosion
+        Vector3 newPosExplosion = new Vector3(navePos.position.x, navePos.position.y, navePos.position.z);
+        GameObject ExplosionClone = Instantiate(explosParticle, newPosExplosion, Quaternion.identity) as GameObject;
+        Destroy(ExplosionClone, 2);
+
+        //Parar corrutinas
+        instObs.SendMessage("PararInstancia");
         StopCoroutine("ContadorScore");
         StopCoroutine("SpeedLevel");
 
@@ -213,12 +223,13 @@ public class InitGame : MonoBehaviour
         {
             GameManager.ThirdScore = score;
         }
-        GameObject.Find("Nave").SetActive(false);
+        
+    }
 
-        //Game Over
+    void MostrarGameOver()
+    {
         GameOver.enabled = true;
         BotonGeneral.Select();
     }
-   
-    
+
 }

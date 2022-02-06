@@ -9,6 +9,9 @@ public class MoverNave : MonoBehaviour
     //Rotacion angle
    float RotAng = 40f;
 
+    /*----------Particulas------------*/
+    // variable Chocar
+    public GameObject sparksParticle;
     
 
 
@@ -86,6 +89,10 @@ public class MoverNave : MonoBehaviour
         
         if(other.gameObject.tag == "obstaculo")
         {
+            //posicion e instancia particulas choque
+            
+            GameObject sparksClone = Instantiate(sparksParticle, transform.position, Quaternion.identity) as GameObject;
+            Destroy(sparksClone, 2);
 
             initGame.SendMessage("Chocar");
            

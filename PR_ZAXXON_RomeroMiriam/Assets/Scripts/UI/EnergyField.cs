@@ -9,13 +9,19 @@ public class EnergyField : MonoBehaviour
 
     [SerializeField] Slider escudoEnergy;
 
+    //carga y descarga escudo para su uso
     public bool loaded;
 
+    //variable para activar y desactivar escudo
     public bool shield;
 
+    // Carga extra de escudo por power up
     public bool PowerUpBoost;
 
-    
+    //Particulas escudo
+    public GameObject shieldParticle;
+    [SerializeField] Transform PartPos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +40,7 @@ public class EnergyField : MonoBehaviour
     {
 
         BarraEscudo();
-       
-       
-       
+  
     }
 
 
@@ -68,6 +72,12 @@ public class EnergyField : MonoBehaviour
 
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
+                //Particulas escudo instanciado
+                Vector3 newPosShield = new Vector3(PartPos.position.x, PartPos.position.y, PartPos.position.z);
+                GameObject shieldClone = Instantiate(shieldParticle, newPosShield, Quaternion.identity) as GameObject;
+                Destroy(shieldClone, 5);
+                
+                //Carga y disminucion score
                 initGame.restaScore = true;
                 escudoEnergy.value = 0;
                 loaded = false;
