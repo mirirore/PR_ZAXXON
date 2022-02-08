@@ -16,11 +16,15 @@ public class InitGame : MonoBehaviour
     public bool restaScore;
     float castigo = 0;
     
-    
     //GAMEOVER
     GameObject Derrota;
     Canvas GameOver;
     [SerializeField] Button BotonGeneral;
+
+    /*----Audio----*/
+    AudioSource AudioSourceNave;
+    [SerializeField] AudioClip explosion;
+    [SerializeField] AudioClip impacto;
 
     /*------UI------*/
     //UI Score
@@ -65,8 +69,10 @@ public class InitGame : MonoBehaviour
         GameOver.enabled = false;
 
         energyField = GameObject.Find("SlEnergy").GetComponent<EnergyField>();
-        
 
+        AudioSourceNave = GameObject.Find("Nave").GetComponent<AudioSource>();
+
+        
     }
 
 
@@ -168,7 +174,10 @@ public class InitGame : MonoBehaviour
     {
         if(energyField.shield==false)
         {
-            
+
+            //sonido impacto
+            AudioSourceNave.PlayOneShot(impacto, 0.1f);
+
             //Quita vidas y desactivar pantalla game over
             lives--;
             spritePos++;
@@ -186,14 +195,21 @@ public class InitGame : MonoBehaviour
     }
        
 
-
         public void Morir()
     {
+
+        //sonido explosion
+        AudioSourceNave.Stop();
+        AudioSourceNave.PlayOneShot(explosion,0.5f);
+        
+
         alive = false;
         speed = 0f;
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         Invoke("MostrarGameOver", 3f);
-        GameObject.Find("Nave").SetActive(false);
+        GameObject.Find("nave_entera1").SetActive(false);
+
+        
 
         //Instancia explosion
         Vector3 newPosExplosion = new Vector3(navePos.position.x, navePos.position.y, navePos.position.z);

@@ -5,9 +5,18 @@ using UnityEngine;
 public class MoverNave : MonoBehaviour
 {
     InitGame initGame;
+    float SpaceshipSpeed = 20f;
 
     //Rotacion angle
    float RotAng = 40f;
+
+    /*-----Sonido-----*/
+    AudioSource audioSource;
+    [SerializeField] AudioClip motor;
+    /*Audio PowerUp
+    [SerializeField] AudioClip PowerUpSound;*/
+
+
 
     /*----------Particulas------------*/
     // variable Chocar
@@ -20,6 +29,9 @@ public class MoverNave : MonoBehaviour
     {
         initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
 
+        //sonido motor
+        audioSource.PlayOneShot(motor, 0.1f);
+        
     }
 
     // Update is called once per frame
@@ -34,12 +46,15 @@ public class MoverNave : MonoBehaviour
 
     void Movimiento()
     {
+        if (initGame.alive == false)
+            return;
+
         float DesplY = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * DesplY * Time.deltaTime * initGame.speed, Space.World);
+        transform.Translate(Vector3.up * DesplY * Time.deltaTime * SpaceshipSpeed, Space.World);
 
 
         float DesplX = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * DesplX * Time.deltaTime * initGame.speed, Space.World);
+        transform.Translate(Vector3.right * DesplX * Time.deltaTime * SpaceshipSpeed, Space.World);
 
 
         //RESTRICCION
@@ -72,6 +87,8 @@ public class MoverNave : MonoBehaviour
 
    void Rotacion()
     {
+        if (initGame.alive == false)
+            return;
         // Posicion y Quaternion
 
         float rotZ = Input.GetAxis("Horizontal") * RotAng;
@@ -86,17 +103,22 @@ public class MoverNave : MonoBehaviour
     //Destruir nave
     private void OnTriggerEnter(Collider other)
     {
-        
-        if(other.gameObject.tag == "obstaculo")
+        /*if (other.gameObject.CompareTag("PowerUp"))
+        {
+            audioSource.PlayOneShot(PowerUpSound, 1f);
+        }*/
+
+        if (other.gameObject.tag == "obstaculo")
         {
             //posicion e instancia particulas choque
-            
             GameObject sparksClone = Instantiate(sparksParticle, transform.position, Quaternion.identity) as GameObject;
             Destroy(sparksClone, 2);
 
-            initGame.SendMessage("Chocar");
-           
+           initGame.SendMessage("Chocar");
+
+   
         }
+
     }
     
 }

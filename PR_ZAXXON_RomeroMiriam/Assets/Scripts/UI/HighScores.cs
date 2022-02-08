@@ -19,8 +19,8 @@ public class HighScores : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HighScore.text = Mathf.Round(GameManager.HighScore).ToString() + " ptos";
-        SecondScore.text = Mathf.Round(GameManager.SecondScore).ToString() + " ptos";
-        ThirdScore.text = Mathf.Round(GameManager.ThirdScore).ToString() + " ptos";
+        HighScore.text = "1. " + Mathf.Round(GameManager.HighScore).ToString();
+        SecondScore.text = "2. " + Mathf.Round(GameManager.SecondScore).ToString();
+        ThirdScore.text = "3. " + Mathf.Round(GameManager.ThirdScore).ToString();
     }
 }

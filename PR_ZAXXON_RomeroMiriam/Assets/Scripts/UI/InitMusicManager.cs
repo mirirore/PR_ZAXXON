@@ -5,8 +5,6 @@ using UnityEngine;
 public class InitMusicManager : MonoBehaviour
 {
 
-
-
     private static InitMusicManager instance;
 
    //Start is called before the first frame update
@@ -34,6 +32,7 @@ public class InitMusicManager : MonoBehaviour
             
         }
     }
+
 
 
            
