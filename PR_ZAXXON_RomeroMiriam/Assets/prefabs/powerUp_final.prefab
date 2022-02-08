@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7887505205420248367}
   - component: {fileID: 500197246984323856}
   - component: {fileID: 5154626837030064306}
-  - component: {fileID: 6357127905659875935}
+  - component: {fileID: 5222302165587512347}
   m_Layer: 0
   m_Name: powerUp_final
   m_TagString: PowerUp
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7e11c99879f024fbc49270ad96f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpSound: {fileID: 8300000, guid: dd3b61bc1903440d58dde7a2e207e1e4, type: 3}
---- !u!82 &6357127905659875935
+  PowerUpSound: {fileID: 0}
+--- !u!82 &5222302165587512347
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,7 +179,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

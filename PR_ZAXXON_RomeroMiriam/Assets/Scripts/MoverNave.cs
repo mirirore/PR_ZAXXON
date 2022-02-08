@@ -13,8 +13,7 @@ public class MoverNave : MonoBehaviour
     /*-----Sonido-----*/
     AudioSource audioSource;
     [SerializeField] AudioClip motor;
-    /*Audio PowerUp
-    [SerializeField] AudioClip PowerUpSound;*/
+    
 
 
 
@@ -103,10 +102,7 @@ public class MoverNave : MonoBehaviour
     //Destruir nave
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.CompareTag("PowerUp"))
-        {
-            audioSource.PlayOneShot(PowerUpSound, 1f);
-        }*/
+        
 
         if (other.gameObject.tag == "obstaculo")
         {
