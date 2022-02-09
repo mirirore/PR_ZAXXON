@@ -3,24 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class ConfigScript : MonoBehaviour
 {
+    //VARIABLES SLIDER MUSICA Y EFECTOS
 
-    [SerializeField] Slider volumenSL;
-    //[SerializeField] Text volumenText;
-    float volumen;
+   // [SerializeField] Slider MusicVolume;
 
-    [SerializeField] Slider efectosSL;
-    //[SerializeField] Text efectosText;
-     float volumenfx;
+    //float volumen;
+
+   // [SerializeField] Slider FxVolume;
+
+    //float volumenfx;
+
+    
+
+    public AudioMixer mixer;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        volumenSL.value = GameManager.VolumenMusica;
-        efectosSL.value = GameManager.VolumenEfectos;
+        
+
+        /*volMusicaSL.value = GameManager.VolumenMusica;
+        volEfectosSL.value = GameManager.VolumenEfectos;*/
+       
+
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -28,13 +41,23 @@ public class ConfigScript : MonoBehaviour
         
     }
 
-   
-    public void CambiarVolumen()
+    public void SetMusic(float soundLevelMusic)
     {
-        volumen = volumenSL.value;
-        volumenfx = efectosSL.value;
-        //volumenText.text = "Volumen" + volumen;
+        mixer.SetFloat("ExposedMusica", soundLevelMusic);
     }
+
+    /*public void SetFX(float soundLevelFX)
+    {
+        mixer.SetFloat("ExposedEfectos", soundLevelFX);
+    }*/
+    
+
+    /*public void CambiarVolumen()
+    {
+        volumen = volMusicaSL.value;
+        volumenfx = volEfectosSL.value;
+        
+    }*/
     public void MenuInicio()
     {
         SceneManager.LoadScene(0);

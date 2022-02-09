@@ -93,7 +93,6 @@ AudioMixerGroupController:
   - {fileID: -8400139917335864987}
   - {fileID: 400855542252449340}
   - {fileID: 4642841214025972073}
-  - {fileID: -1674919819512686784}
   m_Volume: 13f6e9b270fb43246badf5daf4ad96f0
   m_Pitch: 0c8dc3af8ba46744691fb0733fd24ceb
   m_Send: 00000000000000000000000000000000
@@ -118,7 +117,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: a867f9798de521d48ad7cf01ec87e87e
+    name: MyExposedParam
+  - guid: 13f6e9b270fb43246badf5daf4ad96f0
+    name: ExposedEfectos
+  - guid: 0492a61a5e4b3e443828348df3f77ee8
+    name: ExposedMusica
   m_AudioMixerGroupViews:
   - guids:
     - d65c1dc11f38f2f44942f7fb8fe132e8
@@ -127,7 +132,6 @@ AudioMixerController:
     - 78f87f0e6c4f2664d8007488d6a6461d
     - 82a3d8dc86ab005419c62e05bb1e95cc
     - 0f2b7b32159b5eb41be97b3815c2a85d
-    - 3c24595bfbe166f42a187431fae9baa4
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -181,7 +185,7 @@ AudioMixerSnapshotController:
     19783c733792c19438ff1568609394be: 20
     2caa7a74ac320d04486aa5a72e4c6e46: -5.7224774
     c0b0fdb6b62bc794992b6e1d5c33376b: -5.7224774
-    0492a61a5e4b3e443828348df3f77ee8: -22.714046
+    0492a61a5e4b3e443828348df3f77ee8: -24.900745
   m_TransitionOverrides: {}
 --- !u!243 &400855542252449340
 AudioMixerGroupController:

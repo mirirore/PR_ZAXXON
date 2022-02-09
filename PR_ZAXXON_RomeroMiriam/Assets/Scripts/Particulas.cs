@@ -6,8 +6,6 @@ public class Particulas : MonoBehaviour
 {
     InitGame initGame;
 
-    // Sonido tormenta
-    public AudioSource audioSource;
     
 
 //Variable cambio de nivel
@@ -51,7 +49,7 @@ public class Particulas : MonoBehaviour
             else if (level > 0 && level < 4)
             {
                 randombg = Random.Range(0, 2);
-                StartCoroutine("SonidoThunder");
+               
 
             }
             else
@@ -70,11 +68,6 @@ public class Particulas : MonoBehaviour
 
     }
 
-    IEnumerator SonidoThunder()
-    {
-        audioSource.Play();
-        yield return new WaitForSeconds(Random.Range(.25f,1.5f));
-    }
 
     public void PararBG()
     {
