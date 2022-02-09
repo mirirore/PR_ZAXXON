@@ -19,18 +19,19 @@ public class InitMusicManager : MonoBehaviour
     private void Awake()
     {
         
-        if (instance == null)
+        if (instance != null && instance !=this )
         {
+            Destroy(this);
             
-            instance = this;
-            DontDestroyOnLoad(this);
+            
         }
         else
         {
-            
-            Destroy(this);
-            
+
+            instance = this;
+
         }
+        DontDestroyOnLoad(this);
     }
 
 

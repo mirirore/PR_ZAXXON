@@ -7,7 +7,8 @@ public class Particulas : MonoBehaviour
     InitGame initGame;
 
     // Sonido tormenta
-    AudioSource audioSource;
+    public AudioSource audioSource;
+    
 
 //Variable cambio de nivel
     int level;
@@ -18,11 +19,14 @@ public class Particulas : MonoBehaviour
     //Posicion instanciador
     [SerializeField] Transform backgPos;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
 
+        //audioSource = GetComponent<AudioSource>();
 
         StartCoroutine("RandomBG");
     }
@@ -30,7 +34,6 @@ public class Particulas : MonoBehaviour
     IEnumerator RandomBG()
     {
 
-       
         while (true)
         {
 
@@ -49,6 +52,7 @@ public class Particulas : MonoBehaviour
             {
                 randombg = Random.Range(0, 2);
                 StartCoroutine("SonidoThunder");
+
             }
             else
             {
@@ -69,7 +73,7 @@ public class Particulas : MonoBehaviour
     IEnumerator SonidoThunder()
     {
         audioSource.Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(Random.Range(.25f,1.5f));
     }
 
     public void PararBG()

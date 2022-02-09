@@ -234,6 +234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8622552994983377984}
+  - {fileID: 1894997325}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -975,7 +976,7 @@ AudioSource:
   m_GameObject: {fileID: 728010028}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8400139917335864987, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
   m_audioClip: {fileID: 8300000, guid: d4f63848b745f4bb3b8b4d05803d37b4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1714,7 +1715,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1887,6 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b266dd4b1b0588a43acfcd721a006d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1335257425}
   arrayBG:
   - {fileID: 7858091253504655418, guid: 40d9a043427e23d45b1dbce990dc5163, type: 3}
   - {fileID: 6771762829556577265, guid: 7813e60d3bab7714b89b6aab869eefcc, type: 3}
@@ -2202,6 +2204,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1894997324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 67649239}
+    m_Modifications:
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572004704153363494, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+      propertyPath: m_Name
+      value: ShieldPower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+--- !u!4 &1894997325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5572004704153363493, guid: 3c6d544906389874b996988ce25a4889, type: 3}
+  m_PrefabInstance: {fileID: 1894997324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &6410794716948147872
 MeshFilter:
   m_ObjectHideFlags: 0

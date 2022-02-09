@@ -10,8 +10,8 @@ public class PowerUp : MonoBehaviour
 
     
     //Audio PowerUp
-    AudioSource AudioSourcePU;
-    //[SerializeField] AudioClip PowerUpSound;
+    public AudioSource AudioSourcePU;
+    
     
 
     // Start is called before the first frame update
@@ -28,11 +28,10 @@ public class PowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-            //AudioSourcePU.Play();
+            AudioSourcePU.Play();
 
             energyField.PowerUpBoost = true;
-            
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
             
             
         }

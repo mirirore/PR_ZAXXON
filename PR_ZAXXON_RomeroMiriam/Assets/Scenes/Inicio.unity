@@ -882,7 +882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 839499831}
   - component: {fileID: 839499832}
-  - component: {fileID: 839499833}
   m_Layer: 0
   m_Name: MusicaInicio
   m_TagString: Untagged
@@ -913,13 +912,13 @@ AudioSource:
   m_GameObject: {fileID: 839499830}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8904256846733910409, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
   m_audioClip: {fileID: 8300000, guid: c860e83d621d274498eda3d10ef6e801, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
-  Mute: 1
+  Loop: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1000,18 +999,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &839499833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839499830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513eb1fb41a32024d8c42bf9ce9efb52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &897276225
 GameObject:
   m_ObjectHideFlags: 0

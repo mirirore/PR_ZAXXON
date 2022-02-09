@@ -21,7 +21,7 @@ public class EnergyField : MonoBehaviour
     //Particulas escudo
     public GameObject shieldParticle;
     [SerializeField] Transform PartPos;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +32,12 @@ public class EnergyField : MonoBehaviour
         loaded = false;
         shield = false;
         PowerUpBoost = false;
-        
-}
+
+        shieldParticle = GameObject.Find("ShieldPower");
+        shieldParticle.SetActive(false); 
+
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -72,11 +76,15 @@ public class EnergyField : MonoBehaviour
 
             if (Input.GetButtonDown("Escudo") && loaded == true)
             {
+                shieldParticle.SetActive(true);
+
                 //Particulas escudo instanciado
                 Vector3 newPosShield = new Vector3(PartPos.position.x, PartPos.position.y, PartPos.position.z);
-                GameObject shieldClone = Instantiate(shieldParticle, newPosShield, Quaternion.identity) as GameObject;
-                Destroy(shieldClone, 5);
-                
+               GameObject shieldClone = Instantiate(shieldParticle, newPosShield, Quaternion.identity) as GameObject;
+               Destroy(shieldClone, 5);
+
+               
+
                 //Carga y disminucion score
                 initGame.restaScore = true;
                 escudoEnergy.value = 0;
@@ -90,9 +98,7 @@ public class EnergyField : MonoBehaviour
 
 
         }
-       
-            
-        
+ 
 
     }
 
@@ -104,6 +110,6 @@ public class EnergyField : MonoBehaviour
     void PararEscudo()
     {
         shield = false;
-       
+        shieldParticle.SetActive(false);
     }
 }
