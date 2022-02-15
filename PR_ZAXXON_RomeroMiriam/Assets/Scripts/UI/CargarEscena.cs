@@ -14,6 +14,7 @@ public class CargarEscena : MonoBehaviour
     public void Juego()
     {
         SceneManager.LoadScene(1);
+        GameManager.MusicaInicio = false;
     }
 
     public void Configuracion()

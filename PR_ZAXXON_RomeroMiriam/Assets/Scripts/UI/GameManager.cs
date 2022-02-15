@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     
 
 {
-
+    public static bool MusicaInicio = false;
     public static float VolumenMusica = 1f;
     public static float VolumenEfectos= 1f;
     public static float HighScore = 0f;
