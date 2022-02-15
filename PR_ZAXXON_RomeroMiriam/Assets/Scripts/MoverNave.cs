@@ -31,6 +31,7 @@ public class MoverNave : MonoBehaviour
         //sonido motor
         audioSource.PlayOneShot(motor, 0.1f);
         
+        
     }
 
     // Update is called once per frame
