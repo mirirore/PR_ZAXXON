@@ -316,16 +316,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 175137043}
   m_HandleRect: {fileID: 1437460761}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 90693603}
         m_TargetAssemblyTypeName: ConfigScript, Assembly-CSharp
-        m_MethodName: SetMusic
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 90693602}
+  sfxSlider: {fileID: 2069732546}
   mixer: {fileID: 24100000, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
 --- !u!1 &175137042
 GameObject:
@@ -643,6 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
   mixer: {fileID: 24100000, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
 --- !u!1 &501523289
 GameObject:
@@ -653,6 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501523292}
+  - component: {fileID: 501523290}
   - component: {fileID: 501523291}
   m_Layer: 0
   m_Name: EfectosConfig
@@ -661,6 +666,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &501523290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501523289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 90693602}
+  sfxSlider: {fileID: 2069732546}
+  mixer: {fileID: 24100000, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
 --- !u!82 &501523291
 AudioSource:
   m_ObjectHideFlags: 0
@@ -672,7 +692,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1268118447780194925, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
   m_audioClip: {fileID: 8300000, guid: fe8b425b72386b7488ab571406d3d51c, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1217,6 +1237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339417130}
+  - component: {fileID: 1339417131}
   - component: {fileID: 1339417129}
   m_Layer: 0
   m_Name: MusicaConfig
@@ -1236,7 +1257,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8904256846733910409, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9888151b26235b44faeec42f474372ad, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1335,6 +1356,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1339417131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339417128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 90693602}
+  sfxSlider: {fileID: 2069732546}
+  mixer: {fileID: 24100000, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
 --- !u!1 &1353153234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,13 +1885,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 2038418883}
   m_HandleRect: {fileID: 665783795}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2069732547}
+        m_TargetAssemblyTypeName: ConfigScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2069732547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,11 +1911,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069732544}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2cffc7c56960314fbd6fe51c2d24077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 90693602}
+  sfxSlider: {fileID: 2069732546}
   mixer: {fileID: 24100000, guid: aa11d039c0bb55c418c17e3b5bb37361, type: 2}
 --- !u!1 &2087329048
 GameObject:
