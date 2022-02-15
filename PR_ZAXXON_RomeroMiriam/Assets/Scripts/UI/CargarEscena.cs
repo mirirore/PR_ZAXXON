@@ -37,5 +37,10 @@ public class CargarEscena : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+        
+    }
    
 }
