@@ -20,6 +20,7 @@ public class InitGame : MonoBehaviour
     GameObject Derrota;
     Canvas GameOver;
     [SerializeField] Button BotonGeneral;
+    
 
     /*----Audio----*/
     AudioSource AudioSourceNave;
@@ -29,7 +30,7 @@ public class InitGame : MonoBehaviour
     /*------UI------*/
     //UI Score
     [SerializeField] Text ScoreText;
-    public float score;
+    public static float score;
 
     //UI nivel
     [SerializeField] Text LevelText;
@@ -68,6 +69,7 @@ public class InitGame : MonoBehaviour
         GameOver = Derrota.GetComponent<Canvas>();
         GameOver.enabled = false;
 
+       
         energyField = GameObject.Find("SlEnergy").GetComponent<EnergyField>();
 
         AudioSourceNave = GameObject.Find("Nave").GetComponent<AudioSource>();
@@ -92,7 +94,7 @@ public class InitGame : MonoBehaviour
         {
             float tiempo = ((Time.timeSinceLevelLoad * speed) - castigo);
             score = Mathf.Round(tiempo);
-            ScoreText.text = "PUNTOS " + Mathf.Round(score);
+            ScoreText.text = "PUNTOS: " + Mathf.Round(score);
             
            if (restaScore == true)
             {
@@ -161,6 +163,24 @@ public class InitGame : MonoBehaviour
             //Fin del juego
             if (levelGame == 7)
             {
+                if (score > GameManager.HighScore)
+                {
+                    GameManager.ThirdScore = GameManager.SecondScore;
+                    GameManager.SecondScore = GameManager.HighScore;
+                    GameManager.HighScore = score;
+                }
+
+                else if (score < GameManager.HighScore && score > GameManager.SecondScore)
+                {
+                    GameManager.ThirdScore = GameManager.SecondScore;
+                    GameManager.SecondScore = score;
+                }
+
+                else if (score < GameManager.SecondScore && score > GameManager.ThirdScore)
+                {
+                    GameManager.ThirdScore = score;
+                }
+
                 SceneManager.LoadScene(5);
             }
 

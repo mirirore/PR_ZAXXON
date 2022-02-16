@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-
-    
-
+ 
 {
     public static bool MusicaInicio = false;
     public static float VolumenMusica = 1f;
@@ -13,5 +11,6 @@ public class GameManager : MonoBehaviour
     public static float HighScore = 0f;
     public static float SecondScore = 0f;
     public static float ThirdScore = 0f;
+
 
 }
