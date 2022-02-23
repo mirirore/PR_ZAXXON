@@ -10,7 +10,7 @@ public class InitGame : MonoBehaviour
     public float speed = 30f;
     public bool alive;
 
-   
+    
     //Llamar escudo y restaScore
     EnergyField energyField;
     public bool restaScore;
@@ -57,6 +57,7 @@ public class InitGame : MonoBehaviour
         lives = 3;
         vidas.sprite = livesArray[spritePos];
 
+        
         //Estado incial
         alive = true;
 
@@ -82,8 +83,6 @@ public class InitGame : MonoBehaviour
     private void Update()
     {
         HudNivel();
-
-        
 
     }
     
@@ -202,7 +201,8 @@ public class InitGame : MonoBehaviour
             lives--;
             spritePos++;
             vidas.sprite = livesArray[spritePos];
-            GameOver.enabled = false;
+           
+             GameOver.enabled = false;
 
             if (lives == 0)
             {
@@ -228,7 +228,7 @@ public class InitGame : MonoBehaviour
         InstObs instObs = GameObject.Find("InstancObst").GetComponent<InstObs>();
         Invoke("MostrarGameOver", 3f);
         GameObject.Find("nave_entera1").SetActive(false);
-
+        GameObject.Find("Warning").SetActive(false);
         
 
         //Instancia explosion

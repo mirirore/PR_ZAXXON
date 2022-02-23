@@ -13,8 +13,10 @@ public class MoverNave : MonoBehaviour
     /*-----Sonido-----*/
     AudioSource audioSource;
     [SerializeField] AudioClip motor;
-    
 
+    /*-----Luces Alas-----*/
+    [SerializeField] GameObject Warning;
+    [SerializeField] GameObject Safe;
 
 
     /*----------Particulas------------*/
@@ -27,11 +29,11 @@ public class MoverNave : MonoBehaviour
     void Start()
     {
         initGame = GameObject.Find("InitGameObj").GetComponent<InitGame>();
-
         //sonido motor
         audioSource.PlayOneShot(motor, 0.1f);
-        
-        
+        Safe.SetActive(true);
+        Warning.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -107,6 +109,8 @@ public class MoverNave : MonoBehaviour
 
         if (other.gameObject.tag == "obstaculo")
         {
+            Safe.SetActive(false);
+            Warning.SetActive(true);
             //posicion e instancia particulas choque
             GameObject sparksClone = Instantiate(sparksParticle, transform.position, Quaternion.identity) as GameObject;
             Destroy(sparksClone, 2);
